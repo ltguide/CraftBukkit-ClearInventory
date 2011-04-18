@@ -1,6 +1,6 @@
 name: ClearInventory
 main: ltguide.ClearInventory.ClearInventory
-version: 0.1
+version: 0.2
 commands:
   clearinventory:
     description: Clears Inventory
