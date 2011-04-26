@@ -1,10 +1,10 @@
 name: ClearInventory
 main: ltguide.ClearInventory.ClearInventory
-version: 0.2
+version: 0.3
+author: ltguide
+description: Clears Inventory
 commands:
   clearinventory:
     description: Clears Inventory
-    usage: /clearinventory
-  cinv:
-    description: Clears Inventory
-    usage: /cinv
+    usage: /<command> <main|bar|all>
+    aliases: cinv

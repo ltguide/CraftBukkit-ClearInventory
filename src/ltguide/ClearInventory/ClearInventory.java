@@ -29,7 +29,7 @@ public class ClearInventory extends JavaPlugin {
 		if (Permissions != null) return Permissions.has(player, node);
 		else {
 			Plugin test = getServer().getPluginManager().getPlugin("Permissions");
-			if (test != null) {
+			if (test != null && test.isEnabled()) {
 				Permissions = ((Permissions) test).getHandler();
 				return Permissions.has(player, node);
 			}
@@ -38,37 +38,34 @@ public class ClearInventory extends JavaPlugin {
 	}
 	
 	public boolean onCommand(CommandSender sender, Command command, String commandLabel, String[] args) {
-		if (command.getName().equalsIgnoreCase("clearinventory") || command.getName().equalsIgnoreCase("cinv")) {
-			if (!(sender instanceof Player)) {
-				sender.sendMessage("This command has no functionality from the console.");
-				return true;
-			}
-			if (!hasPermission(sender, "clearinventory.use")) {
-				sender.sendMessage(ChatColor.RED + "You do not have permission.");
-				return true;
-			}
-			
-			PlayerInventory inventory = ((Player) sender).getInventory();
-			String option = (args.length > 0 ? args[0].toLowerCase() : "");
-			
-			Integer firstSlot = -1;
-			Integer lastSlot = inventory.getSize();
-			
-			if (option.equals("all")) firstSlot = 0;
-			else if (option.equals("main")) firstSlot = 9;
-			else if (option.equals("bar")) {
-				firstSlot = 0;
-				lastSlot = 9;
-			}
-			
-			if (firstSlot > -1) {
-				for (Integer i = firstSlot; i < lastSlot; i++)
-					inventory.clear(i);
-				sender.sendMessage(ChatColor.GREEN + "Inventory cleared.");
-			}
-			else sender.sendMessage("Usage: /" + command.getName().toLowerCase() + " <main|bar|all>");
+		if (!(sender instanceof Player)) {
+			sender.sendMessage("This command has no functionality from the console.");
 			return true;
 		}
-		return false;
+		if (!hasPermission(sender, "clearinventory.use")) {
+			sender.sendMessage(ChatColor.RED + "You do not have permission.");
+			return true;
+		}
+		
+		PlayerInventory inventory = ((Player) sender).getInventory();
+		String option = (args.length > 0 ? args[0].toLowerCase() : "");
+		
+		Integer firstSlot = -1;
+		Integer lastSlot = inventory.getSize();
+		
+		if (option.equals("all")) firstSlot = 0;
+		else if (option.equals("main")) firstSlot = 9;
+		else if (option.equals("bar")) {
+			firstSlot = 0;
+			lastSlot = 9;
+		}
+		
+		if (firstSlot > -1) {
+			for (Integer i = firstSlot; i < lastSlot; i++)
+				inventory.clear(i);
+			sender.sendMessage(ChatColor.GREEN + "Inventory cleared.");
+			return true;
+		}
+		else return false;
 	}
 }
