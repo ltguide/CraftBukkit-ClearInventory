@@ -1,0 +1,21 @@
+messages:
+  prefix: '&e[ClearInventory]&f'
+  syntax: '&6Syntax: &f%s &6--&e %s'
+  permission: '&cYou do not have permission.'
+  reload: '&aReloaded configuration. (%s)'
+  target_results: '&5Matching users: &f%s'
+  target_required: '&cYou need to specify an @PlayerName.'
+  clear_all: '&aYour entire inventory has been cleared.'
+  clear_main: '&aYour inventory has been cleared.'
+  clear_bar: '&aYour quick bar has been cleared.'
+  clear_done: '&aCleared %s inventory.'
+commands:
+  bar:
+    description: 'Clear the quick bar.'
+  main:
+    description: 'Clear the inventory.'
+  all:
+    description: 'Clear the entire inventory.'
+  reload:
+    description: 'Reload configuration and reset queue to configured intervals.'
+version-nomodify: '0.4'

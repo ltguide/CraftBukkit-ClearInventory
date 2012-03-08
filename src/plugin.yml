@@ -1,10 +1,29 @@
 name: ClearInventory
 main: ltguide.clearinventory.ClearInventory
-version: 0.3
 author: ltguide
+version: 0.4
 description: Clears Inventory
+softdepend: [Vault]
 commands:
   clearinventory:
     description: Clears Inventory
-    aliases: cinv
-    usage: /<command> <main|bar|all>
+    aliases: [cinv]
+    usage: /<command>
+permissions:
+  clearinventory.*:
+    description: Allows all command functionality
+    children:
+      clearinventory.self: true
+      clearinventory.others: true
+  clearinventory.admin:
+    description: Allows admin command functionality
+    children:
+      clearinventory.reload: true
+  clearinventory.self:
+    description: Allows you to clear your own inventory
+  clearinventory.others:
+    description: Allows you to clear the inventories of other players
+    children:
+      clearinventory.self: true
+  clearinventory.reload:
+    description: Allows you to reload the configuration
