@@ -1,9 +1,8 @@
 package ltguide.clearinventory.data;
 
-import ltguide.base.data.IEnum;
-import ltguide.base.data.Message;
+import ltguide.base.data.IMessage;
 
-public enum Messages implements IEnum {
+public enum Messages implements IMessage {
 	PREFIX(false),
 	SYNTAX(false),
 	PERMISSION(false),
@@ -13,12 +12,16 @@ public enum Messages implements IEnum {
 	CLEAR_ALL(true),
 	CLEAR_MAIN(true),
 	CLEAR_BAR(true),
-	CLEARED(true);
+	CLEAR_DONE(true);
 	
-	public Message handle;
+	private boolean usesPrefix;
 	
 	Messages(final boolean usesPrefix) {
-		handle = new Message(name(), usesPrefix);
-		Message.put(handle);
+		this.usesPrefix = usesPrefix;
+	}
+	
+	@Override
+	public boolean usesPrefix() {
+		return usesPrefix;
 	}
 }

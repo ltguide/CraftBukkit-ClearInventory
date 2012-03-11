@@ -1,10 +1,10 @@
 messages:
-  prefix: '&e[ClearInventory]&f'
+  prefix: '&e[Clear Inventory]&f'
   syntax: '&6Syntax: &f%s &6--&e %s'
   permission: '&cYou do not have permission.'
   reload: '&aReloaded configuration. (%s)'
   target_results: '&5Matching users: &f%s'
-  target_required: '&cYou need to specify an @PlayerName.'
+  target_required: '&cYou need to specify a valid @PlayerName.'
   clear_all: '&aYour entire inventory has been cleared.'
   clear_main: '&aYour inventory has been cleared.'
   clear_bar: '&aYour quick bar has been cleared.'

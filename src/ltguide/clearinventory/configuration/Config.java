@@ -1,13 +1,12 @@
 package ltguide.clearinventory.configuration;
 
-import ltguide.base.data.Configuration;
+import ltguide.base.Base;
+import ltguide.base.configuration.Configuration;
 import ltguide.clearinventory.data.Commands;
 import ltguide.clearinventory.data.Messages;
 
-import org.bukkit.plugin.java.JavaPlugin;
-
 public class Config extends Configuration {
-	public Config(final JavaPlugin instance) {
+	public Config(final Base instance) {
 		super(instance);
 		
 		loadConfig();
@@ -27,7 +26,7 @@ public class Config extends Configuration {
 	
 	private void migrateConfig() {
 		/*
-		Base.warning("migrating configuration");
+		plugin.warning("migrating configuration");
 		
 		if (versionCompare(oldVersion, new int[] { 0, 0, 0 })) {
 			
