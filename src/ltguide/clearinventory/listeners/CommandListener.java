@@ -35,7 +35,7 @@ public class CommandListener implements CommandExecutor {
 					plugin.clearPlayerInventory(0, 9);
 					break;
 				case RELOAD:
-					plugin.config.reload();
+					plugin.reload();
 					plugin.broadcast(sender);
 					break;
 			}

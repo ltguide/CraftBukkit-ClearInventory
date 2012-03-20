@@ -9,13 +9,13 @@ public enum Commands implements ICommand {
 	RELOAD("reload", Messages.RELOAD, "", false);
 	
 	private String permission;
-	private Messages message;
+	private String message;
 	private String syntax;
 	private boolean usesTarget;
 	
 	Commands(final String permission, final Messages message, final String syntax, final boolean usesTarget) {
-		this.permission = "clearinventory." + permission;
-		this.message = message;
+		this.permission = permission;
+		this.message = message.name();
 		this.syntax = syntax;
 		this.usesTarget = usesTarget;
 	}
@@ -35,7 +35,7 @@ public enum Commands implements ICommand {
 	}
 	
 	@Override
-	public Messages message() {
+	public String message() {
 		return message;
 	}
 	

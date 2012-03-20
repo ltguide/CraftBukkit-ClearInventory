@@ -1,5 +1,7 @@
+# For an explanation of these settings, visit https://github.com/ltguide/CraftBukkit-ClearInventory/wiki/Messages
+
+prefix: '&e[Clear Inventory]&f'
 messages:
-  prefix: '&e[Clear Inventory]&f'
   syntax: '&6Syntax: &f%s &6--&e %s'
   permission: '&cYou do not have permission.'
   reload: '&aReloaded configuration. (%s)'

@@ -3,7 +3,6 @@ package ltguide.clearinventory.data;
 import ltguide.base.data.IMessage;
 
 public enum Messages implements IMessage {
-	PREFIX(false),
 	SYNTAX(false),
 	PERMISSION(false),
 	RELOAD(true),
